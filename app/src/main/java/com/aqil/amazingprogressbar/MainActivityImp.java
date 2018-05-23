@@ -14,7 +14,6 @@ public class MainActivityImp {
   private   CustomProgress customProgress;
     private Context context;
 
-
     public MainActivityImp(Context context) {
         this.context = context;
         customProgress=new CustomProgress(context);
@@ -51,8 +50,6 @@ public class MainActivityImp {
 
                     Toast.makeText(context, "Loading Completed!", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         },10);
 

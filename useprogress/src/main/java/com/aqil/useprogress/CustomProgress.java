@@ -42,6 +42,11 @@ public class CustomProgress extends Dialog {
         animateHorizontalProgressBar.setProgress(progress);
         tvCompleted.setText(String.valueOf(progress));
     }
+    @Override
+    public  void show(){
+        super.show();
+        startDotLoader();
+    }
 
     public void setLabel(String label){
         tvStatus.setText(label);
@@ -62,7 +67,7 @@ public class CustomProgress extends Dialog {
        tvCompleted = (TextView) findViewById(R.id.got);
        animateHorizontalProgressBar = (HorizontalProgressBar) findViewById(R.id.animate_progress_bar);
        tvFilename = (TextView) findViewById(R.id.file);
-       startDotLoader();
+
    }
 
    private  void startDotLoader() {
