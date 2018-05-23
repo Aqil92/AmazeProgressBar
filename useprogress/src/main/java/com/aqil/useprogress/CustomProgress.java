@@ -42,6 +42,7 @@ public class CustomProgress extends Dialog {
         animateHorizontalProgressBar.setProgress(progress);
         tvCompleted.setText(String.valueOf(progress));
     }
+
     @Override
     public  void show(){
         super.show();
@@ -61,12 +62,12 @@ public class CustomProgress extends Dialog {
        setContentView(R.layout.amazingloader);
        setCancelable(false);
        setCanceledOnTouchOutside(false);
-       tvDots = (TextView) findViewById(R.id.dot);
-       tvStatus = (TextView) findViewById(R.id.tvstatus);
-       tvTotal = (TextView) findViewById(R.id.total);
-       tvCompleted = (TextView) findViewById(R.id.got);
-       animateHorizontalProgressBar = (HorizontalProgressBar) findViewById(R.id.animate_progress_bar);
-       tvFilename = (TextView) findViewById(R.id.file);
+       tvDots = findViewById(R.id.dot);
+       tvStatus = findViewById(R.id.tvstatus);
+       tvTotal = findViewById(R.id.total);
+       tvCompleted = findViewById(R.id.got);
+       animateHorizontalProgressBar = findViewById(R.id.animate_progress_bar);
+       tvFilename = findViewById(R.id.file);
 
    }
 
