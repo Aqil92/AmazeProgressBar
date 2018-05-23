@@ -55,7 +55,7 @@ public class CustomProgress extends Dialog {
         tvFilename.setText(contentValue);
     }
 
-   void init(){
+  public void init(){
        mhandler = new Handler();
        requestWindowFeature(Window.FEATURE_NO_TITLE);
        setContentView(R.layout.amazingloader);
