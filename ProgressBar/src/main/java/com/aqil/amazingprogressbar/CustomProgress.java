@@ -46,9 +46,6 @@ public class CustomProgress extends Dialog {
     public void setLabel(String label){
         tvStatus.setText(label);
     }
-  public void setContentValue(String contentValue){
-      tvFilename.setText(contentValue);
-    }
 
    void init(){
        mhandler = new Handler();
