@@ -24,19 +24,19 @@ public class CustomProgress extends Dialog {
 
     Handler mhandler;
 
-    int count = 0;
+    int counter = 0;
 
 
-   public CustomProgress(Context context) {
-       super(context);
-       init();
-       // TODO Auto-generated constructor stub
-   }
+    public CustomProgress(Context context) {
+        super(context);
+        init();
+        // TODO Auto-generated constructor stub
+    }
 
-   public  void setMax(int max){
-       animateHorizontalProgressBar.setMax(max);
-       tvTotal.setText(String.valueOf(max));
-   }
+    public void setMax(int max) {
+        animateHorizontalProgressBar.setMax(max);
+        tvTotal.setText(String.valueOf(max));
+    }
 
     public  void setProgress(int progress){
         animateHorizontalProgressBar.setProgress(progress);
@@ -52,40 +52,41 @@ public class CustomProgress extends Dialog {
     public void setLabel(String label){
         tvStatus.setText(label);
     }
-  public void setCurrentValue(String contentValue){
+
+    public void setCurrentValue(String contentValue) {
         tvFilename.setText(contentValue);
     }
 
-  public void init(){
-       mhandler = new Handler();
-       requestWindowFeature(Window.FEATURE_NO_TITLE);
-       setContentView(R.layout.amazingloader);
-       setCancelable(false);
-       setCanceledOnTouchOutside(false);
-       tvDots = findViewById(R.id.dot);
-       tvStatus = findViewById(R.id.tvstatus);
-       tvTotal = findViewById(R.id.total);
-       tvCompleted = findViewById(R.id.got);
-       animateHorizontalProgressBar = findViewById(R.id.animate_progress_bar);
-       tvFilename = findViewById(R.id.file);
+    public void init() {
+        mhandler = new Handler();
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.amazingloader);
+        setCancelable(false);
+        setCanceledOnTouchOutside(false);
+        tvDots = findViewById(R.id.dot);
+        tvStatus = findViewById(R.id.tvstatus);
+        tvTotal = findViewById(R.id.total);
+        tvCompleted = findViewById(R.id.got);
+        animateHorizontalProgressBar = findViewById(R.id.animate_progress_bar);
+        tvFilename = findViewById(R.id.file);
 
-   }
+    }
 
-   private  void startDotLoader() {
+    private void startDotLoader() {
         mhandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                count++;
-                if (count == 1) {
+                counter++;
+                if (counter == 1) {
                     tvDots.setText(".");
-                } else if (count == 2) {
+                } else if (counter == 2) {
                     tvDots.setText("..");
-                } else if (count == 3) {
+                } else if (counter == 3) {
                     tvDots.setText("...");
-                } else if (count == 4) {
+                } else if (counter == 4) {
                     tvDots.setText("");
                 } else {
-                    count = 0;
+                    counter = 0;
                 }
 
                 startDotLoader();
