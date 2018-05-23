@@ -40,7 +40,7 @@
 
 
 
-        <com.aqil.amazingprogressbar.AnimateHorizontalProgressBar
+        <com.aqil.amazingprogressbar.HorizontalProgressBar
             style="?android:attr/progressBarStyleHorizontal"
             android:id="@+id/animate_progress_bar"
             android:layout_width="match_parent"

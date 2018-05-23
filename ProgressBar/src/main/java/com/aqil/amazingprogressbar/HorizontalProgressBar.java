@@ -17,9 +17,9 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.ProgressBar;
 
-public class AnimateHorizontalProgressBar extends ProgressBar {
+public class HorizontalProgressBar extends ProgressBar {
 
-    private static final String TAG = AnimateHorizontalProgressBar.class.getName();
+    private static final String TAG = HorizontalProgressBar.class.getName();
 
     private static final long DEFAULT_DURATION = 1000;
     private static final int DEFAULT_CORNER_RADIUS = -1;
@@ -33,24 +33,24 @@ public class AnimateHorizontalProgressBar extends ProgressBar {
     private AnimateProgressListener mAnimateProgressListener;
 
 
-    public AnimateHorizontalProgressBar(Context context, AttributeSet attrs) {
+    public HorizontalProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public AnimateHorizontalProgressBar(Context context) {
+    public HorizontalProgressBar(Context context) {
         this(context, null, 0);
     }
 
-    public AnimateHorizontalProgressBar(Context context, AttributeSet attrs, int defStyle) {
+    public HorizontalProgressBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, 0);
         setUpAnimator();
 
         // progress color set
-        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.AnimateHorizontalProgressBar);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.HorizontalProgressBar);
 
-        int progressColor = ta.getColor(R.styleable.AnimateHorizontalProgressBar_ahp_progressColor, DEFAULT_PROGRESS_COLOR);
-        int backgroundColor = ta.getColor(R.styleable.AnimateHorizontalProgressBar_ahp_backgroundColor, DEFAULT_PROGRESS_BACKGROUND_COLOR);
-        int cornerRadius = ta.getDimensionPixelSize(R.styleable.AnimateHorizontalProgressBar_ahp_cornerRadius, DEFAULT_CORNER_RADIUS);
+        int progressColor = ta.getColor(R.styleable.HorizontalProgressBar_ahp_progressColor, DEFAULT_PROGRESS_COLOR);
+        int backgroundColor = ta.getColor(R.styleable.HorizontalProgressBar_ahp_backgroundColor, DEFAULT_PROGRESS_BACKGROUND_COLOR);
+        int cornerRadius = ta.getDimensionPixelSize(R.styleable.HorizontalProgressBar_ahp_cornerRadius, DEFAULT_CORNER_RADIUS);
 
         ClipDrawable progressClipDrawable;
         Drawable[] progressDrawables;
@@ -92,7 +92,7 @@ public class AnimateHorizontalProgressBar extends ProgressBar {
         mProgressAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                AnimateHorizontalProgressBar.super.setProgress((Integer) animation.getAnimatedValue());
+                HorizontalProgressBar.super.setProgress((Integer) animation.getAnimatedValue());
             }
         });
         mProgressAnimator.addListener(new SimpleAnimatorListener() {
@@ -119,7 +119,7 @@ public class AnimateHorizontalProgressBar extends ProgressBar {
         mMaxAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                AnimateHorizontalProgressBar.super.setMax((Integer) animation.getAnimatedValue());
+                HorizontalProgressBar.super.setMax((Integer) animation.getAnimatedValue());
             }
         });
         mMaxAnimator.addListener(new SimpleAnimatorListener() {

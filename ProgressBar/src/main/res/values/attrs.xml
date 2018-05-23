@@ -4,7 +4,7 @@
 
 
 
-    <declare-styleable name="AnimateHorizontalProgressBar">
+    <declare-styleable name="HorizontalProgressBar">
         <attr name="ahp_progressColor" format="color|reference" />
         <attr name="ahp_backgroundColor" format="color|reference" />
         <attr name="ahp_cornerRadius" format="dimension|reference" />

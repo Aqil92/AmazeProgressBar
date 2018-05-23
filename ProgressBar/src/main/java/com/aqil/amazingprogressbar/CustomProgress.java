@@ -20,7 +20,7 @@ public class CustomProgress extends Dialog {
     TextView tvTotal;
     TextView tvDots;
 
-    AnimateHorizontalProgressBar animateHorizontalProgressBar;
+    HorizontalProgressBar animateHorizontalProgressBar;
 
     Handler mhandler;
 
@@ -46,6 +46,9 @@ public class CustomProgress extends Dialog {
     public void setLabel(String label){
         tvStatus.setText(label);
     }
+  public void setContentValue(String contentValue){
+      tvFilename.setText(contentValue);
+    }
 
    void init(){
        mhandler = new Handler();
@@ -57,7 +60,7 @@ public class CustomProgress extends Dialog {
        tvStatus = (TextView) findViewById(R.id.tvstatus);
        tvTotal = (TextView) findViewById(R.id.total);
        tvCompleted = (TextView) findViewById(R.id.got);
-       animateHorizontalProgressBar = (AnimateHorizontalProgressBar) findViewById(R.id.animate_progress_bar);
+       animateHorizontalProgressBar = (HorizontalProgressBar) findViewById(R.id.animate_progress_bar);
        tvFilename = (TextView) findViewById(R.id.file);
        startDotLoader();
    }
